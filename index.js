@@ -3,14 +3,14 @@ const scoreDisplay = document.getElementById('score');
 
 const holes = document.getElementsByClassName('hole');
 
-
+let proffess = ['prof','prof2', 'prof3'];
 setInterval(function() {
-  let proffess = ['prof','prof2', 'prof3'];
+ 
   let choice = proffess[Math.floor(Math.random()*proffess.length)];//proffess[Math.floor(Math.random()*proffess.length)];
   const randomHoleIndex = Math.floor(Math.random() * holes.length);
-  //myFunction();
+  
   holes[randomHoleIndex].classList.toggle(choice);
-}, 50);
+}, 1000);
 
 
 const gameArea = document.getElementById('whack-a-prof');
@@ -22,10 +22,8 @@ gameArea.addEventListener('click', function(clickEvent) {
     }, 1000); // every second
   }
  
-  if (clickEvent.target.matches('.prof')||clickEvent.target.matches('.prof2')||clickEvent.target.matches('.prof3')) {
-    clickEvent.target.classList.remove('prof');
-    clickEvent.target.classList.remove('prof2');
-    clickEvent.target.classList.remove('prof3');
+  if (clickEvent.target.className) {
+    remove(clickEvent.target.classList);
     score++;
     scoreDisplay.innerText = score;
   }
