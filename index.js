@@ -10,7 +10,7 @@ setInterval(function() {
   const randomHoleIndex = Math.floor(Math.random() * holes.length);
   
   holes[randomHoleIndex].classList.toggle(choice);
-}, 1000);
+}, 300);
 
 
 const gameArea = document.getElementById('whack-a-prof');
@@ -22,7 +22,7 @@ gameArea.addEventListener('click', function(clickEvent) {
     }, 1000); // every second
   }
  
-  if (clickEvent.target.className) {
+  if (clickEvent.target.className.length>4) {
     remove(clickEvent.target.classList);
     score++;
     scoreDisplay.innerText = score;
@@ -56,5 +56,31 @@ function remove(event) {
       event.remove('prof');
     else
       event.remove('prof' +(i+1));
+  }
+}
+
+
+
+
+//music
+var mySong = document.getElementById("music");
+
+//automatically plays the music on website load
+//also sets volume automatically
+window.addEventListener("DOMContentLoaded", event => {
+  const audio = document.querySelector("audio");
+  audio.volume = 0.2;
+  audio.play();
+});
+
+//Play and pause buttons
+function plays(){
+  if(mySong.paused){
+    mySong.play();
+    document.getElementById("button").innerHTML = "Pause Music";
+  }
+  else{
+    mySong.pause();
+    document.getElementById("button").innerHTML = "Play Music";
   }
 }

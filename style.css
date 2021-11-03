@@ -8,7 +8,7 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: rgb(168, 15, 5)
   }
-  
+
   #whack-a-prof {
     background-color: rgb(53, 112, 189);
     border: solid 10px #000;
@@ -37,4 +37,11 @@ body {
   .prof3 {
     background-image: url(images/prof3.png);
     height: 150px;
+  }
+
+  #button{
+    text-decoration: underline;
+    font-weight: bold;
+    cursor:pointer;
+    cursor:hand;
   }
