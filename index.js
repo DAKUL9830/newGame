@@ -1,22 +1,22 @@
-let score = 0;
+let score = 0;   //new score added
 const scoreDisplay = document.getElementById('score');
 
-const holes = document.getElementsByClassName('hole');
+const holes = document.getElementsByClassName('hole'); //back elements for character
 
 let proffess = ['prof','prof2', 'prof3'];
 setInterval(function() {
  
-  let choice = proffess[Math.floor(Math.random()*proffess.length)];//proffess[Math.floor(Math.random()*proffess.length)];
+  let choice = proffess[Math.floor(Math.random()*proffess.length)];//random appearance of the charaacters
   const randomHoleIndex = Math.floor(Math.random() * holes.length);
   
-  holes[randomHoleIndex].classList.toggle(choice);
+  holes[randomHoleIndex].classList.toggle(choice); //appearance of characters in random hole each second
 }, 1000);
 
 
 const gameArea = document.getElementById('whack-a-prof');
-gameArea.addEventListener('click', function(clickEvent) {
+gameArea.addEventListener('click', function(clickEvent) { //click function,if you click on character,it dissapears
   console.log(clickEvent.target.className);
-    if(!timer) {
+    if(!timer) {      //timer involved
     timer = window.setInterval(function() { 
       myFunction();
     }, 1000); // every second
