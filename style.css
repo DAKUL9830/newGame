@@ -14,7 +14,7 @@ body {
     border: solid 10px #000;
     padding: 20px;
     width: 360px;
-    height: 500px;
+    height: 42em;
     display: flex;
     flex-wrap: wrap;
   }
@@ -38,6 +38,31 @@ body {
     background-image: url(images/prof3.png);
     height: 150px;
   }
+  .prof4 {
+    background-image: url(images/prof4.png);
+    height: 80px;
+  }
+  .prof5 {
+    background-image: url(images/prof5.png);
+    height: 115px;
+  }
+  .prof6 {
+    background-image: url(images/prof6.png);
+    height: 10.5em;
+  }
+  .prof7 {
+    background-image: url(images/prof7.png);
+    height: 13.55em;
+  }
+  .prof8 {
+    background-image: url(images/prof8.png);
+    height: 12.55em;
+  }
+  .prof9 {
+    background-image: url(images/prof9.png);
+    height: 11em;
+  }
+
 
   #button{
     text-decoration: underline;

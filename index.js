@@ -3,7 +3,7 @@ const scoreDisplay = document.getElementById('score');
 
 const holes = document.getElementsByClassName('hole'); //back elements for character
 
-let proffess = ['prof','prof2', 'prof3'];
+let proffess = ['prof','prof2', 'prof3', 'prof4', 'prof5', 'prof6', 'prof7', 'prof8', 'prof9'];
 setInterval(function() {
  
   let choice = proffess[Math.floor(Math.random()*proffess.length)];//random appearance of the charaacters
