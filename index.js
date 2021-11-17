@@ -1,5 +1,6 @@
 let score = 0;   //new score added
 const scoreDisplay = document.getElementById('score');
+  
 
 const holes = document.getElementsByClassName('hole'); //back elements for character
 
@@ -12,7 +13,13 @@ setInterval(function() {
   holes[randomHoleIndex].classList.toggle(choice); //appearance of characters in random hole each second
 }, 300);
 
-
+function newTimer(){
+  if(!timer) {      //timer involved
+    timer = window.setInterval(function() { 
+      myFunction();
+    }, 1000); // every second
+  }
+}
 const gameArea = document.getElementById('whack-a-prof');
 gameArea.addEventListener('click', function(clickEvent) { //click function,if you click on character,it dissapears
   console.log(clickEvent.target.className);
@@ -30,22 +37,23 @@ gameArea.addEventListener('click', function(clickEvent) { //click function,if yo
 })
 
 
-var seconds=60;
+var seconds=30;
 var timer;
 function myFunction() {
-  if(seconds < 60) { // I want it to say 1:00, not 60
+  if(seconds < 30) { 
     document.getElementById("timer").innerHTML = seconds;
   }
   if (seconds >0 ) { // so it doesn't go to -1
      seconds--;
   } else {
      clearInterval(timer);
-     alert("your time is over");
+     gameOver()
+   
   }
 }
 
 
-document.getElementById("timer").innerHTML="1:00"; 
+document.getElementById("timer").innerHTML="30"; 
 //this is so we can remove professors that are added without retyping the remove function every time
 //(the classname returned each time is different so i can't find a solution that will be less than O(N),
 //ideally it should just remove the one prof and be O(1))
@@ -83,4 +91,38 @@ function plays(){
     mySong.pause();
     document.getElementById("button").innerHTML = "Play Music";
   }
+}
+
+
+//start screen
+function startGame(){
+  let start=document.getElementById("start");
+  let gameOver=document.getElementById("gameOver");
+  start.style.display="none";
+  gameArea.style.display="flex";
+  gameOver.style.display="none";
+  document.getElementById("timer").innerHTML="30";
+  seconds=30;
+  timer = window.setInterval(function() { 
+    myFunction();
+  }, 1000);
+ 
+  
+ 
+  
+  
+  
+}
+//game over screen
+function gameOver(){
+  let start=document.getElementById("start");
+  let gameOver=document.getElementById("gameOver");
+  start.style.display="none";
+  gameArea.style.display="none";
+  gameOver.style.display="block";
+  document.getElementById('score').innerHTML=0;
+  score=0;
+
+ 
+ 
 }

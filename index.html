@@ -4,24 +4,38 @@
 
 
 <head>
-  <a style="font-size:30px;font-family:cursive">Whack-A-Prof</a>
-  <a id="button" onclick="plays();">Pause music</a>
-  <link rel="stylesheet" href="style.css"/>
+  
+ 
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <link rel="stylesheet"  type="text/css" href="style.css"/>
   <script src="index.js" defer></script>
 
   <!--Background Image-->
-  <style>
+  <!-- <style>
     body {
     background-image: url('images/bc.jpeg');
   }
-</style>
+</style> -->
 </head>
 <body> 
+  
+  <!-- <div id="timer"></div>
 
+
+  <h1 id="score"> 0</h1> -->
+  
+  <a style="font-size:30px;font-family:cursive">Whack-A-Prof</a>
+  <a id="button" onclick="plays();">Pause music</a>
+  </br>
   <div id="timer"></div>
+  </br>
+  <div id='rules'><h2>Your goal: 50 kicked Profs for 30 seconds</h2></div>
+  <div id="whack-a-prof" style='display:none'>
 
-  <h1 id="score"> 0</h1>
-  <div id="whack-a-prof">
+      
+    <h1 id="score"> 0</h1>
+  
     <div class="hole"></div>
     <div class="hole"></div>
     <div class="hole"></div>
@@ -31,6 +45,15 @@
     <div class="hole"></div>
     <div class="hole"></div>
     <div class="hole"></div>
+  </div>
+
+
+  <div id="start" style="display:block">
+  <a href="#" onclick="startGame()">Start Game</a>
+  </div>
+  <div id="gameOver" style="display:none">
+    <h1>GAME OVER</h1>
+    <a href="#" onclick="startGame()">Start Game</a>
   </div>
 </body>
 </html>
