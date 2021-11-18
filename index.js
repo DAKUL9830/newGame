@@ -40,16 +40,24 @@ gameArea.addEventListener('click', function(clickEvent) { //click function,if yo
 var seconds=30;
 var timer;
 function myFunction() {
-  if(seconds < 30) { 
+ // CONDITIONS FOR LOSE AND WIN SCREEN
+  if(seconds < 30&&score<10) { 
     document.getElementById("timer").innerHTML = seconds;
   }
-  if (seconds >0 ) { // so it doesn't go to -1
+  if (seconds >0 &&score<10) { // so it doesn't go to -1
      seconds--;
-  } else {
+  } 
+  else if(seconds >0&&score>=10){
+    clearInterval(timer);
+    gameOverWin()
+  } 
+    else {
      clearInterval(timer);
      gameOver()
    
   }
+
+
 }
 
 
@@ -98,9 +106,11 @@ function plays(){
 function startGame(){
   let start=document.getElementById("start");
   let gameOver=document.getElementById("gameOver");
+  let gameOverWin=document.getElementById("gameOverWin");
   start.style.display="none";
   gameArea.style.display="flex";
   gameOver.style.display="none";
+  gameOverWin.style.display="none";
   document.getElementById("timer").innerHTML="30";
   seconds=30;
   timer = window.setInterval(function() { 
@@ -122,7 +132,14 @@ function gameOver(){
   gameOver.style.display="block";
   document.getElementById('score').innerHTML=0;
   score=0;
+}
 
- 
- 
+function gameOverWin(){
+  let start=document.getElementById("start");
+  let gameOverWin=document.getElementById("gameOverWin");
+  start.style.display="none";
+  gameArea.style.display="none";
+  gameOverWin.style.display="block";
+  document.getElementById('score').innerHTML=0;
+  score=0;
 }
