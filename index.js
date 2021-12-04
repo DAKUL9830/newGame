@@ -41,13 +41,13 @@ var seconds=30;
 var timer;
 function myFunction() {
  // CONDITIONS FOR LOSE AND WIN SCREEN
-  if(seconds < 30&&score<10) { 
+  if(seconds < 30&&score<50) { 
     document.getElementById("timer").innerHTML = seconds;
   }
-  if (seconds >0 &&score<10) { // so it doesn't go to -1
+  if (seconds >0 &&score<50) { // so it doesn't go to -1
      seconds--;
   } 
-  else if(seconds >0&&score>=10){
+  else if(seconds >0&&score>=50){
     clearInterval(timer);
     gameOverWin()
   } 
