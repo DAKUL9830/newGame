@@ -117,6 +117,17 @@ body {
     height: 11em;
   }
 
+  .prof10 {
+    background-image: url(images/prof10.png);
+    height: 5em;
+  }
+
+  .prof11 {
+    background-image: url(images/prof11.png);
+    height: 5em;
+  }
+  
+
 
   #button{
     text-decoration: underline;
